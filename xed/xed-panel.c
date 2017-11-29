@@ -186,6 +186,8 @@ xed_panel_get_preferred_width (GtkWidget *widget,
                                gint      *minimum,
                                gint      *natural)
 {
+    GTK_WIDGET_CLASS (xed_panel_parent_class)->get_preferred_width (widget, minimum, natural);
+
     xed_panel_get_size (widget, GTK_ORIENTATION_HORIZONTAL, minimum, natural);
 }
 
@@ -194,7 +196,9 @@ xed_panel_get_preferred_height (GtkWidget *widget,
                                 gint      *minimum,
                                 gint      *natural)
 {
-   xed_panel_get_size (widget, GTK_ORIENTATION_VERTICAL, minimum, natural);
+    GTK_WIDGET_CLASS (xed_panel_parent_class)->get_preferred_height (widget, minimum, natural);
+
+    xed_panel_get_size (widget, GTK_ORIENTATION_VERTICAL, minimum, natural);
 }
 
 static void
